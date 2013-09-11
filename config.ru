@@ -19,7 +19,7 @@ toto = Toto::Server.new do
   # 
   # set :author,    ENV['USER']                               # blog author
   # set :title,     Dir.pwd.split('/').last                   # site title
-  # set :root,      "index"                                   # page to load on /
+  set :root,      "blogindex"                                   # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles
   # set :markdown,  :smart                                    # use markdown + smart-mode
   # set :disqus,    false                                     # disqus id, or false
@@ -28,6 +28,7 @@ toto = Toto::Server.new do
   # set :cache,      28800                                    # cache duration, in seconds
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
+
 end
 
 run toto
